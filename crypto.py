@@ -26,7 +26,7 @@ import pandas
 import matplotlib.pyplot as plt
 
 
-TOKEN = "526327295:AAGNuC9nN7N-nSJLcpMlUal6AhIhVtj7T3I"
+TOKEN = "API_TOKEN"
 URL = "https://api.telegram.org/bot{}/".format(TOKEN)
 
 def get_url(url):
