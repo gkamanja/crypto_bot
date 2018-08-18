@@ -24,9 +24,11 @@ from datetime import datetime
 #modules for the plot
 import pandas
 import matplotlib.pyplot as plt
+from decouple import config
 
 
-TOKEN = "API_TOKEN"
+TOKEN = config("API_TOKEN")
+print(TOKEN)
 URL = "https://api.telegram.org/bot{}/".format(TOKEN)
 
 def get_url(url):
@@ -181,7 +183,7 @@ def graph(startdate,enddate,updates,coin):
 	legend = plt.legend(loc='upper left',bbox_to_anchor=(1,0.5),frameon=True,borderpad=1,borderaxespad=1)
 
 	#plt.show()
-	fig.savefig('crypto.jpg',dpi = fig.dpi)
+	fig.savefig('crypto.png',dpi = fig.dpi)
 	'''
 	buf = io.BytesIO()
 	fig.savefig(buf,format='jpeg')
@@ -227,7 +229,7 @@ def main():
 			for update in updates['result']:
 				chat = update['message']['chat']['id']
 				#image = curl -v -F photo=@/home/gk/Desktop/BREAKnotpartofOS/Scripts/crypto.jpg
-				image = {'photo':open('crypto.jpg','rb')}
+				image = {'photo':open('crypto.png','rb')}
 				#image = graph(startdate,enddate,updates,coin)
 				send_message(image,chat)
 				
