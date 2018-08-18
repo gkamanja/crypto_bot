@@ -6,7 +6,7 @@ cycler==0.10.0
 heroku==0.1.4
 idna==2.7
 kiwisolver==1.0.1
-matplotlib==2.2.3
+matplotlib==2.1.2
 numpy==1.15.0
 pandas==0.23.4
 pyparsing==2.2.0
